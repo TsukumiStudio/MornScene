@@ -10,6 +10,7 @@ namespace MornScene
     public class MornSceneTypeDrawer : MornEnumDrawerBase
     {
         protected override string[] Values => MornSceneGlobal.I.SceneKeys;
+        protected override Object PingTarget => MornSceneGlobal.I;
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
