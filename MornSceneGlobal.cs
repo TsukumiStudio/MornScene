@@ -5,14 +5,14 @@ using UnityEngine;
 namespace MornScene
 {
     [CreateAssetMenu(fileName = nameof(MornSceneGlobal), menuName = "Morn/" + nameof(MornSceneGlobal))]
-    internal sealed class MornSceneGlobal : MornGlobalBase<MornSceneGlobal>
+    public sealed class MornSceneGlobal : MornGlobalBase<MornSceneGlobal>
     {
         protected override string ModuleName => nameof(MornScene);
         [SerializeField] private string[] _rollbackKeys;
         [SerializeField] private string[] _sceneKeys;
         [SerializeField] private List<TypeToScene> _toSceneList;
-        public string[] RollbackKeys => _rollbackKeys;
-        public string[] SceneKeys => _sceneKeys;
+        internal string[] RollbackKeys => _rollbackKeys;
+        internal string[] SceneKeys => _sceneKeys;
 
         public MornSceneObject ToScene(MornSceneType scene)
         {
