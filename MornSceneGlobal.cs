@@ -6,7 +6,7 @@ namespace MornLib
     [CreateAssetMenu(fileName = nameof(MornSceneGlobal), menuName = "Morn/" + nameof(MornSceneGlobal))]
     public sealed class MornSceneGlobal : MornGlobalBase<MornSceneGlobal>
     {
-        protected override string ModuleName => "MornScene";
+        public override string ModuleName => "MornScene";
         [SerializeField] private string[] _rollbackKeys;
         [SerializeField] private string[] _sceneKeys;
         [SerializeField] private List<TypeToScene> _toSceneList;
