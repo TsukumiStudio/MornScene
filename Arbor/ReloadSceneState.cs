@@ -2,7 +2,7 @@
 using Arbor;
 using UnityEngine.SceneManagement;
 
-namespace MornScene
+namespace MornLib
 {
     public class ReloadSceneState : StateBehaviour
     {

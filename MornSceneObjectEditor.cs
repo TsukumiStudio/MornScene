@@ -3,7 +3,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace MornScene
+namespace MornLib
 {
     [CustomPropertyDrawer(typeof(MornSceneObject))]
     internal class MornSceneObjectEditor : PropertyDrawer
@@ -42,7 +42,7 @@ namespace MornScene
                     var scnObj = GetSceneObject(newScene.name);
                     if (scnObj == null)
                     {
-                        MornSceneUtil.LogError($"{newScene.name}が'Scenes in the Build'に含まれていません");
+                        MornSceneGlobal.LogError($"{newScene.name}が'Scenes in the Build'に含まれていません");
                     }
                     else
                     {

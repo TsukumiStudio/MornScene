@@ -1,6 +1,6 @@
 using System;
 
-namespace MornScene
+namespace MornLib
 {
     [Serializable]
     internal struct TypeToScene

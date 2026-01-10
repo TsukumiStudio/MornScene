@@ -2,12 +2,12 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MornScene
+namespace MornLib
 {
     [CustomPropertyDrawer(typeof(TypeToScene))]
     public class TypeToSceneDrawer : PropertyDrawer
     {
-        public override void OnGUI(UnityEngine.Rect position, SerializedProperty property, GUIContent label)
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var sceneType = property.FindPropertyRelative("SceneType");
             var scene = property.FindPropertyRelative("Scene");
