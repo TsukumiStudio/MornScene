@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MornScene
+namespace MornLib
 {
     public class AddAndWaitCloseSceneState : StateBehaviour
     {

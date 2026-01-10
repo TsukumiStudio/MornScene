@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace MornScene
+namespace MornLib
 {
     [CustomPropertyDrawer(typeof(MornSceneType))]
     public class MornSceneTypeDrawer : MornEnumDrawerBase

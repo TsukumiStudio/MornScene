@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MornScene
+namespace MornLib
 {
     [AddComponentMenu("")]
     internal sealed class MornSceneService : MonoBehaviour

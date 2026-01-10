@@ -3,7 +3,7 @@ using Arbor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MornScene
+namespace MornLib
 {
     public class ChangeSceneState : StateBehaviour
     {

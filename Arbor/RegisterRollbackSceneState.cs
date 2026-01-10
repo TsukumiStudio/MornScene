@@ -2,7 +2,7 @@
 using Arbor;
 using UnityEngine;
 
-namespace MornScene
+namespace MornLib
 {
     public class RegisterRollbackSceneState : StateBehaviour
     {

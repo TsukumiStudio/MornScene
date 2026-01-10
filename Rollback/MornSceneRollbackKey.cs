@@ -1,7 +1,7 @@
 using System;
 using MornEnum;
 
-namespace MornScene
+namespace MornLib
 {
     [Serializable]
     public sealed class MornSceneRollbackKey : MornEnumBase
