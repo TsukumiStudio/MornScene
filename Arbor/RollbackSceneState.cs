@@ -18,7 +18,7 @@ namespace MornLib
             }
             else
             {
-                MornSceneGlobal.LogError($"RollbackSceneAction: Not found scene key: {_key}");
+                MornSceneGlobal.Logger.LogError($"RollbackSceneAction: Not found scene key: {_key}");
             }
         }
     }

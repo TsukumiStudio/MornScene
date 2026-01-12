@@ -42,7 +42,7 @@ namespace MornLib
                     var scnObj = GetSceneObject(newScene.name);
                     if (scnObj == null)
                     {
-                        MornSceneGlobal.LogError($"{newScene.name}が'Scenes in the Build'に含まれていません");
+                        MornSceneGlobal.Logger.LogError($"{newScene.name}が'Scenes in the Build'に含まれていません");
                     }
                     else
                     {
