@@ -8,7 +8,7 @@
 
 | 種別 | 名前 |
 |------|------|
-| 外部パッケージ | Arbor（オプション: USE_ARBOR定義時） |
+| 外部パッケージ | Arbor |
 | Mornライブラリ | MornEnum, MornGlobal |
 
 ## 使い方
