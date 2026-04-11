@@ -6,27 +6,23 @@ using UnityEngine;
 namespace MornLib
 {
     [CustomPropertyDrawer(typeof(MornSceneType))]
-    public class MornSceneTypeDrawer : MornEnumDrawerBase
+    public sealed class MornSceneTypeDrawer : PropertyDrawer
     {
-        protected override string[] Values => MornSceneGlobal.I.SceneKeys;
-        protected override Object PingTarget => MornSceneGlobal.I;
-
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             // ボタンの幅を定義
             const float buttonWidth = 50f;
             const float spacing = 5f;
-            
-            // プロパティフィールドの領域を計算
+
+            // ドロップダウン領域と Open ボタン領域を計算
             var fieldRect = new Rect(position.x, position.y, position.width - buttonWidth - spacing, position.height);
-            
-            // 基底クラスのOnGUIを呼び出してドロップダウンを描画
-            base.OnGUI(fieldRect, property, label);
-            
-            // ボタンの領域を計算
             var buttonRect = new Rect(position.x + position.width - buttonWidth, position.y, buttonWidth, position.height);
-            
-            // Openボタンを描画
+
+            // MornEnumDrawer の共通ヘルパーでドロップダウンを描画
+            // (MornSceneType.Values は RollbackKeys を返すが、シーンを開く用途では SceneKeys を表示する)
+            MornEnumDrawer.DrawEnumProperty(fieldRect, property, label, MornSceneGlobal.I.SceneKeys, MornSceneGlobal.I);
+
+            // 開くボタンを描画
             if (GUI.Button(buttonRect, "開く"))
             {
                 var keyProperty = property.FindPropertyRelative("_key");
@@ -57,8 +53,8 @@ namespace MornLib
                     {
                         return;
                     }
-                    
-                    // Build Settingsからシーンパスを検索
+
+                    // Build Settings からシーンパスを検索
                     string scenePath = null;
                     foreach (var scene in EditorBuildSettings.scenes)
                     {
@@ -68,8 +64,8 @@ namespace MornLib
                             break;
                         }
                     }
-                    
-                    // Build Settingsに見つからない場合は、プロジェクト内を検索
+
+                    // Build Settings に見つからない場合は、プロジェクト内を検索
                     if (string.IsNullOrEmpty(scenePath))
                     {
                         var guids = AssetDatabase.FindAssets($"t:Scene {sceneName}");
@@ -78,7 +74,7 @@ namespace MornLib
                             scenePath = AssetDatabase.GUIDToAssetPath(guids[0]);
                         }
                     }
-                    
+
                     // シーンを開く
                     if (!string.IsNullOrEmpty(scenePath))
                     {

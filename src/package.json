@@ -1,0 +1,21 @@
+{
+  "name": "com.tsukumistudio.mornscene",
+  "version": "1.0.0",
+  "displayName": "MornScene",
+  "description": "Unity の SceneManager を統一して扱うシーン管理ラッパー。非同期ロード、ロールバック、シーン種別の文字列キー管理、Arbor 連携などを提供する。",
+  "unity": "6000.0",
+  "license": "Unlicense",
+  "author": {
+    "name": "TsukumiStudio"
+  },
+  "keywords": [
+    "scene",
+    "scenemanagement",
+    "rollback",
+    "async"
+  ],
+  "dependencies": {
+    "com.tsukumistudio.mornglobal": "1.0.0",
+    "com.tsukumistudio.mornenum": "1.0.0"
+  }
+}
