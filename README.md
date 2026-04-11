@@ -1,51 +1,34 @@
 # MornScene
 
+<p align="center">
+  <img src="src/Editor/MornScene.png" alt="MornScene" width="640" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/TsukumiStudio/MornScene" alt="License" />
+</p>
+
 ## 概要
 
-シーン管理と履歴ロールバック機能を提供するユーティリティライブラリ。
+Unity の SceneManager を統一して扱うシーン管理ラッパー。非同期ロード、ロールバック、シーン種別の文字列キー管理、Arbor 連携などを提供する。
 
-## 依存関係
+## 導入方法
 
-| 種別 | 名前 |
-|------|------|
-| 外部パッケージ | Arbor |
-| Mornライブラリ | MornEnum, MornGlobal |
+Unity Package Manager で以下の Git URL を追加:
 
-## 使い方
-
-### 基本的なシーン切り替え
-
-```csharp
-// MornSceneTypeで型安全なシーン指定
-MornSceneType sceneType = /* 設定されたシーン */;
-
-// グローバル設定からシーンオブジェクトを取得
-MornSceneObject sceneObject = sceneType.ToScene();
-
-// SceneManagerで使用
-SceneManager.LoadScene(sceneObject);
+```
+https://github.com/TsukumiStudio/MornScene.git?path=src#1.0.0
 ```
 
-### ロールバック機能
+`Window > Package Manager > + > Add package from git URL...` に貼り付けてください。
 
-```csharp
-// シーン遷移時にロールバックキーを登録
-MornSceneService.I.RegisterRollbackScene(key, currentScene);
+### 依存パッケージ
 
-// 後で以前のシーンに戻す
-if (MornSceneService.I.TryGetRollbackScene(key, out var sceneName))
-{
-    SceneManager.LoadSceneAsync(sceneName, loadMode);
-}
-```
+- [UniTask](https://github.com/Cysharp/UniTask) (`com.cysharp.unitask`)
+- [Arbor](https://arbor.caitsithware.com/) (Arbor State 連携用)
+- [MornGlobal](https://github.com/TsukumiStudio/MornGlobal) (`com.tsukumistudio.mornglobal`)
+- [MornEnum](https://github.com/TsukumiStudio/MornEnum) (`com.tsukumistudio.mornenum`)
 
-### Arborステート（USE_ARBOR定義時）
+## ライセンス
 
-| ステート | 機能 |
-|---------|------|
-| ChangeSceneState | シーンを切り替え |
-| AddSceneState | シーンを追加ロード |
-| RollbackSceneState | ロールバック機能を使用 |
-| RegisterRollbackSceneState | 現在のシーンをロールバック用に登録 |
-| UnLoadSceneState | シーンをアンロード |
-| ReloadSceneState | シーンをリロード |
+[The Unlicense](LICENSE)
