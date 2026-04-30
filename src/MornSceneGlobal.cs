@@ -7,9 +7,9 @@ namespace MornLib
     public sealed class MornSceneGlobal : MornGlobalBase<MornSceneGlobal>
     {
         protected override string ModuleName => "MornScene";
-        [SerializeField] private string[] _rollbackKeys;
-        [SerializeField] private string[] _sceneKeys;
-        [SerializeField] private List<TypeToScene> _toSceneList;
+        [SerializeField, NoElementLabel] private string[] _rollbackKeys;
+        [SerializeField, NoElementLabel] private string[] _sceneKeys;
+        [SerializeField, NoElementLabel] private List<TypeToScene> _toSceneList;
         internal string[] RollbackKeys => _rollbackKeys;
         internal string[] SceneKeys => _sceneKeys;
 
