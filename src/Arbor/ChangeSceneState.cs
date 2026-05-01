@@ -7,7 +7,7 @@ namespace MornLib
 {
     public class ChangeSceneState : StateBehaviour
     {
-        [SerializeField] private MornSceneType _scene;
+        [SerializeField, NoLabel] private MornSceneType _scene;
 
         public override void OnStateBegin()
         {
