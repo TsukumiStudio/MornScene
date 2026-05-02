@@ -1,10 +1,12 @@
 #if USE_ARBOR
 ﻿using Arbor;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 namespace MornLib
 {
+    [Serializable]
     public class UnLoadCurrentSceneState : StateBehaviour
     {
         [SerializeField] private StateLink _next;

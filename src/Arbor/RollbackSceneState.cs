@@ -1,10 +1,12 @@
 #if USE_ARBOR
 using Arbor;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MornLib
 {
+    [Serializable]
     public class RollbackSceneState : StateBehaviour
     {
         [SerializeField] private MornSceneRollbackKey _key;

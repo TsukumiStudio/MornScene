@@ -1,11 +1,13 @@
 #if USE_ARBOR
 ﻿using Arbor;
 using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MornLib
 {
+    [Serializable]
     public class AddAndWaitCloseSceneState : StateBehaviour
     {
         [SerializeField] private MornSceneType _scene;
