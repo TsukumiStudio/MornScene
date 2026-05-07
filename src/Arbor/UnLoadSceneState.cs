@@ -1,5 +1,11 @@
+#if USE_ARBOR || USE_MORNSTATE
 #if USE_ARBOR
-﻿using Arbor;
+using Arbor;
+#elif USE_MORNSTATE
+using MornLib;
+using StateBehaviour = MornLib.MornStateBehaviour;
+using StateLink = MornLib.Connection;
+#endif
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
