@@ -4,7 +4,7 @@ using Arbor;
 #elif USE_MORNSTATE
 using MornLib;
 using StateBehaviour = MornLib.MornStateBehaviour;
-using StateLink = MornLib.Connection;
+using StateLink = MornLib.StateLink;
 #endif
 using UnityEngine.SceneManagement;
 using System;
