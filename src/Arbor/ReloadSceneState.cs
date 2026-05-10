@@ -1,7 +1,6 @@
-#if USE_ARBOR || USE_MORNSTATE
 #if USE_ARBOR
 using Arbor;
-#elif USE_MORNSTATE
+#else
 using MornLib;
 using StateBehaviour = MornLib.MornStateBehaviour;
 #endif
@@ -19,4 +18,3 @@ namespace MornLib
         }
     }
 }
-#endif
