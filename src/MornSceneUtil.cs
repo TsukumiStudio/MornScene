@@ -21,6 +21,8 @@ namespace MornLib
         }
 
         /// <summary>シーンを追加読み込みする。Editor ではビルド設定に無いシーンも読み込める</summary>
+        /// <param name="scenePath">Assets/....unity 形式の完全パス</param>
+        /// <param name="ct">待機の中断のみで、読み込み自体は止まらない。中断した場合に読み込まれたシーンは呼び出し側で破棄すること</param>
         public static async UniTask<Scene> LoadAdditiveAsync(string scenePath, CancellationToken ct = default)
         {
 #if UNITY_EDITOR
